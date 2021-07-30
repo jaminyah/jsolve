@@ -15,16 +15,6 @@ class Main {
     static boolean findCycle(int[][] edges) {
 
         List<Node> parents = createGraph(edges);
-
-        // Display parents and children
-        List<Node> childern = new ArrayList<>();
-        for (Node parent: parents) {
-            childern = parent.getChildren();
-            for (Node child: childern) {
-                System.out.println("Parent: " + parent.data + " Child: " + child.data);
-            }
-        }
-
         boolean status = traverseDFS(parents);
         return status;
     }
