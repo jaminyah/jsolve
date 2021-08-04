@@ -1,4 +1,8 @@
-package find_cycle;
+/**
+ * Find cycle in a undirected graph
+ */
+
+package find_cycle_undirected;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +11,10 @@ import java.util.Stack;
 class Main {
     public static void main(String[] args) {
 
-        int[][] e = {{1, 3}, {2, 3, 4}, {0}, {}, {2, 5}, {}};
+        int[][] e = { { 1, 3 }, { 2, 3, 4 }, { 0 }, {}, { 2, 5 }, {} };
         boolean found = findCycle(e);
         System.out.println("Found: " + found);
-    }   
+    }
 
     static boolean findCycle(int[][] edges) {
 
@@ -24,7 +28,7 @@ class Main {
         int len;
         int data;
         List<Node> parents = new ArrayList<>();
-        
+
         for (int i = 0; i < vertices.length; i++) {
             Node parent = new Node(i);
             parents.add(parent);
@@ -60,10 +64,10 @@ class Main {
 
             List<Node> childNodes = graph.get(topNode.data).getChildren();
             System.out.println("Size: " + childNodes.size());
-            for (Node child: childNodes) {
+            for (Node child : childNodes) {
 
-
-                System.out.println("Parent: " + topNode.data + " child: " + child.data + " - contains child: " + visitedList.contains(child));
+                System.out.println("Parent: " + topNode.data + " child: " + child.data + " - contains child: "
+                        + visitedList.contains(child));
 
                 if (visitedList.contains(child)) {
                     System.out.println("Visited list contains: " + child.data);
@@ -77,5 +81,5 @@ class Main {
             }
         }
         return false;
-    }        
+    }
 }

@@ -1,4 +1,4 @@
-package find_cycle;
+package find_cycle_undirected;
 
 import java.util.ArrayList;
 import java.util.List;

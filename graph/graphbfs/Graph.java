@@ -12,13 +12,13 @@ class Graph {
         node.isVisited = true;
         queue.add(node);
 
-        while(queue.isEmpty() == false) {
+        while (queue.isEmpty() == false) {
             Node firstNode = queue.remove();
             System.out.print(firstNode.data + ", ");
 
             List<Node> childNodes = firstNode.getChildren();
 
-            for (Node child: childNodes) {
+            for (Node child : childNodes) {
                 if (child != null && (child.isVisited == false)) {
                     child.isVisited = true;
                     queue.add(child);
